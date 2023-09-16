@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learning vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>vue</h1>
+    <div id="app">
+
+        <div v-if="isshow">
+            <p>{{title}}-{{autor}}-{{age}}</p>
+        </div>
+        <button v-on:click="age++">increase age</button>
+        <button @click="age--">decrease age</button>
+        <button @click="changetitle(isshow)">
+
+            <span v-if="isshow"> Hide</span>
+            <span v-if="!isshow">show</span>
+
+        </button>
+
+        <p v-show="isshow">currently showing</p>
+
+
+        <br>
+        <!-- mouse events -->
+
+        <div class="box" @mouseover="handleclick($event,5)">mouseover(enter) </div>
+        <div class="box" @mouseleave="handleclick">mouseleave </div>
+        <div class="box" @dblclick="handleclick">doubbleclick </div>
+        <div class="box" @mousemove="handlemousemove">position-{{x}} {{y}}</div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>

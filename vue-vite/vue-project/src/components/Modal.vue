@@ -1,0 +1,55 @@
+<template>
+
+<div class="backdrop"></div>
+<div class="modal" :class="{red:theme==='red'} ">
+    <h1>{{ heading }}</h1>
+    <p>{{ content }}</p>
+</div>
+</template>
+
+
+<script>
+
+export default{
+
+    props:['heading','content','theme'],
+
+    data(){
+
+        
+    }
+}
+</script>
+
+
+<style scoped>
+.modal{
+
+    width: 400px;
+    padding: 20px;
+    margin: 100px auto;
+    background:white;
+    border-radius: 10px;
+}
+
+.backdrop{
+
+    top:0;
+    position: fixed;
+    background: rgba(0,0,0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.modal.red{
+
+    background: tomato;
+    color: white;
+}
+
+.modal.black{
+
+background: black;
+color: white;
+}
+</style>
